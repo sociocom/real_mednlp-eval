@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT root (metadata,articles) >
+<!--
+- root
+    - metadata
+        - name … データセット名
+        - dataset … training/test
+        - language … ja/en
+        - creator … 製作者＝SocioCom
+        - version
+        - release-date
+        - origin … 配布元URL
+    - articles
+        - article [id, title]
+            - (body) = テキストデータ；PRISMタグ含む
+-->
+<!ELEMENT metadata (name,dataset,language,creator,version,release-date,origin)>
+    <!ELEMENT name (#PCDATA)*>
+    <!ELEMENT dataset (#PCDATA)*>
+    <!ELEMENT language (#PCDATA)*>
+    <!ELEMENT creator (#PCDATA)*>
+    <!ELEMENT version (#PCDATA)*>
+    <!ELEMENT release-date (#PCDATA)*>
+    <!ELEMENT origin (#PCDATA)*>
+
+<!ELEMENT articles (article)*>
+        <!ELEMENT article (#PCDATA|d|a|f|c|timex3|t-test|t-key|t-val|m-key|m-val|r|cc|p)*>
+            <!ATTLIST article id CDATA #REQUIRED>
+            <!ATTLIST article title CDATA #REQUIRED>
+
+<!-- 病変・症状 (Diseases and symptoms)
+<d certainty={“positive” or “suspicious” or “negative” or “general”}>‌...‌</d>‌
+ ※certainty 省略可
+    positive: その病変・症状が患者に実際に認められた場合
+    suspicious: 患者がその病変・症状に該当するのではないかと疑われている場合(鑑別疾患*1として提案されているなど)
+    negative: 患者についてその病変・症状の存在が否定された場合
+    general: 患者に関係ない一般的な病変・症状に関する記述や，将来生じる可能性のある病変・症状を表現している場合
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+ -->
+<!ELEMENT d (#PCDATA)*>
+    <!ATTLIST d certainty (positive|suspicious|negative|general) #IMPLIED>
+    <!ATTLIST d correction CDATA #IMPLIED>
+
+<!-- ‌臓器・部位 (Anatomical parts)
+<a>‌. . . ‌</a>‌
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+-->
+<!ELEMENT a (#PCDATA)*>
+    <!ATTLIST a correction CDATA #IMPLIED>
+
+<!-- 特徴・尺度 (Features and measurements)‌
+<f>‌. . . ‌</f>‌
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+-->
+<!ELEMENT f (#PCDATA)*>
+    <!ATTLIST f correction CDATA #IMPLIED>
+
+<!-- ‌変化 (Change)
+<c>‌. . . ‌</c>‌
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+-->
+<!ELEMENT c (#PCDATA)*>
+    <!ATTLIST c correction CDATA #IMPLIED>
+
+<!-- 時間表現 (TIMEX3)‌
+<TIMEX3 type=“{DATE, TIME, duration, SET, AGE, MED, MISC}”>‌...‌</TIMEX3>‌
+ ※type 省略不可
+    DATE: 日歴に焦点をあてた日付表現
+    TIME: 一日のうちのある時点に焦点をあてた表現や不定の現在を表す「今」「現在」などの時刻表現
+    duration: 時間軸上の両端ではなく期間全体を表すことに焦点をあてた期間表現
+    SET: 複数の日付・時刻・期間に焦点をあてた頻度集合表現
+    AGE: 年齢に関する表現
+    MED:「術後」など医療に特徴的な時間表現
+    MISC: 以上のどれにも該当しない場合
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+-->
+<!ELEMENT timex3 (#PCDATA)*>
+    <!ATTLIST timex3 type (date|time|duration|set|age|med|misc) #REQUIRED>
+    <!ATTLIST timex3 correction CDATA #IMPLIED>
+
+<!-- 検査・問診 (Test)
+ <t-test state=“{scheduled, executed, negated, other}”>‌...‌</t-test>‌ —検査・問診名
+ ※state 省略不可
+    scheduled: 今後予定している(記録に記載された時点では実施されていない)場合
+    executed: すでに実施済みの場合
+    negated: 中止など，実施しないことになった場合
+    other: 上記以外の状態の場合
+‌ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+
+<t-key (state=“{scheduled, executed, negated, other}”)>‌...‌</t-key>‌ —検査・問診項目 もしくは医学的指標名
+ ※state 省略可
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+
+‌<t-val>‌. . . ‌</t-val>‌ — 検査・問診結果もしくは医学的指標の値
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+ -->
+<!ELEMENT t-test (#PCDATA)*>
+    <!ATTLIST t-test state (scheduled|executed|negated|other) #REQUIRED>
+    <!ATTLIST t-test correction CDATA #IMPLIED>
+
+<!ELEMENT t-key (#PCDATA)*>
+    <!ATTLIST t-key state (scheduled|executed|negated|other) #IMPLIED>
+    <!ATTLIST t-key correction CDATA #IMPLIED>
+
+<!ELEMENT t-val (#PCDATA)*>
+    <!ATTLIST t-val correction CDATA #IMPLIED>
+
+
+<!--  薬品 (Medicine)
+<m-key state=“{scheduled, executed, negated, other}”>‌...‌</m-key>‌ —薬品名
+‌ ※state 省略不可
+    scheduled: 今後投薬を予定している(記録に記載された時点で投薬されていない)場合
+    executed: すでに投薬中の場合，
+    negated: 中止など，投薬しないことになった場合
+    other: 上記以外の状態の場合
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+
+<m-val (state=“{scheduled, executed, negated, other}”)>‌...‌</m-val>‌ —薬品の値
+ ※state 省略可
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+-->
+<!ELEMENT m-key (#PCDATA)*>
+    <!ATTLIST m-key state (scheduled|executed|negated|other) #REQUIRED>
+    <!ATTLIST m-key correction CDATA #IMPLIED>
+
+<!ELEMENT m-val (#PCDATA)*>
+    <!ATTLIST m-val state (scheduled|executed|negated|other) #IMPLIED>
+    <!ATTLIST m-val correction CDATA #IMPLIED>
+
+<!-- 治療 (Remedy)
+<r state=“{scheduled, executed, negated, other}”>‌...‌</r>‌
+‌ ※state 省略不可
+    scheduled: 今後治療を予定している(記録に記載された時点で実施されていない)場合
+    executed: すでに実施中の場合
+    negated: 中止など，実施しないことになった場合
+    other: 上記以外の状態の場合
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+-->
+
+<!ELEMENT r (#PCDATA)*>
+    <!ATTLIST r state (scheduled|executed|negated|other) #REQUIRED>
+    <!ATTLIST r correction CDATA #IMPLIED>
+
+<!-- クリニカルコンテクスト (Clinical Context)
+‌<cc state=“{scheduled, executed, negated, other}”>‌...‌</cc>‌
+ ※state 省略不可
+    scheduled: 今後予定している(記録に記載された時点では実施されていない)場合
+    executed: すでに実施済みの場合
+    negated: 中止など，実施しないことになった場合
+    other: 上記以外の状態の場合
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+-->
+<!ELEMENT cc (#PCDATA)*>
+    <!ATTLIST cc state (scheduled|executed|negated|other) #REQUIRED>
+    <!ATTLIST cc correction CDATA #IMPLIED>
+
+<!-- 保留 (Pending)
+<p>...‌</p>
+ ※誤字・脱字の訂正(correction 属性)‌ 省略可
+
+-->
+<!ELEMENT p (#PCDATA)*>
+    <!ATTLIST p correction CDATA #IMPLIED>
+
+<!--
+            ＊＊＊ END ＊＊＊
+-->
