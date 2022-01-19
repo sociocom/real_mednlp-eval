@@ -75,7 +75,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description="Calculate NER performance for Real-MedNLP Subtask 1 and 2."
     )
-    parser.add_argument("xml", type=Path, help="path to test_addTag XML")
+    parser.add_argument("xml", type=Path, help="path to the submission XML")
     parser.add_argument(
         "--ref",
         type=Path,
@@ -93,10 +93,10 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    root = ET.parse(args.xml)
+    root = ET.parse(args.ref)
     x_true, y_true = convert_xml_to_iob(root, tagset=args.tagset, attrib=args.attrib)
 
-    root = ET.parse(args.ref)
+    root = ET.parse(args.xml)
     x_pred, y_pred = convert_xml_to_iob(root, tagset=args.tagset, attrib=args.attrib)
 
     if x_true != x_pred:
