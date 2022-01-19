@@ -7,12 +7,12 @@ The evaluation toolkit for Real-MedNLP (NTCIR-16)'s CR track.
 You need the following external packages to run this toolkit.
 
 - `lxml`
-<!-- - `seqeval` -->
+- `seqeval`
 
 Please install these packages to your Python environment, e.g.:
 
 ```
-pip install --user lxml
+pip install --user lxml seqeval
 ```
 
 The commands would be different depending on your Python setup.
@@ -42,4 +42,16 @@ This script checks three points for the submission XML file:
 
 ### Metric calculation
 
-TBA
+Use `evaluate_ner.py`:
+
+```
+python evaluate_ner.py --ref <test_addTag.XML> --tagset cr --attrib path/to/your_submission.xml
+```
+
+The script outputs Precision, Recall, F-score, and Support for each tag as well as micro/macro averaged scores thereof.
+
+- `--tagset`: tagset to evaluate (all, cr, rr)
+  - `all`: include all tags defined in PRISM annotation except `<p>`
+  - `cr`: target "d", "a", "timex3", "t-test", "t-key", "t-val", "m-key", and "m-val"
+  - `rr`: evaluate "d", "a", "timex3", and "t-test"
+- `--attrib` (`--no-attrib`): consider (or ignore) the attributes defined in some tags ("certainty", "state", "type")
