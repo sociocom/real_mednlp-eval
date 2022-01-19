@@ -79,7 +79,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--ref",
         type=Path,
-        help="path to the reference (test_addTag) XML to check diff",
+        help="path to the reference (test_addTag) XML",
         required=True,
     )
     parser.add_argument(
