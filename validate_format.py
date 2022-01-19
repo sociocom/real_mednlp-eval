@@ -1,3 +1,4 @@
+"""Validate XML format. """
 import argparse
 import sys
 import tempfile
@@ -33,7 +34,7 @@ def get_xml_validated(fp, dtdp):
 
     # check scheme
     dtd = etree.DTD(dtdp.name)
-    root_lxml = etree.parse(fp.name).getroot()
+    root_lxml = etree.parse(str(fp)).getroot()
     if not dtd.validate(root_lxml):
         print("[NG] XML scheme", file=sys.stderr)
         print("---------------", file=sys.stderr)
@@ -63,9 +64,9 @@ def check_diff(ref, tgt):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Remove annotation tags from articles")
-    parser.add_argument("xml", type=Path, help="path to test_addTag XML")
+    parser.add_argument("xml", type=Path, help="path to your submission XML")
     parser.add_argument(
-        "--ref", type=Path, help="path to the reference XML to check diff"
+        "--ref", type=Path, help="path to the reference (test) XML to check diff"
     )
     parser.add_argument(
         "--dtd",
