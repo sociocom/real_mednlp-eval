@@ -6,6 +6,7 @@ import xml.etree.ElementTree as ET
 from difflib import unified_diff
 from pathlib import Path
 
+# TODO: migrate to lxml from standard ET
 from lxml import etree
 
 
