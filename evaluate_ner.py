@@ -41,20 +41,21 @@ def convert_xml_to_iob(root, tagset="all", attrib=False):
         chrs = []
         lbls = []
         for elem in article.iter():
+            # this iter starts from <article> itself
             if elem.text:
-                chrs.extend(list(elem.text))
+                text = elem.text.lstrip("\n") if elem.tag == "article" else elem.text
+                chrs.extend(list(text))
                 if elem.tag in TAGSET[tagset]:
                     tagname = tagname_with_attr(elem) if attrib else elem.tag
-                    lbls.extend(
-                        [f"B-{tagname}"] + [f"I-{tagname}"] * (len(elem.text) - 1)
-                    )
+                    lbls.extend([f"B-{tagname}"] + [f"I-{tagname}"] * (len(text) - 1))
                 else:  # elem.tag == "article":
-                    lbls.extend(["O"] * len(elem.text))
-            if elem.tail:
+                    lbls.extend(["O"] * len(text))
+            if elem.tail and elem.tag != "article":
+                # <article>'s tail is outside of the article -> skip
                 chrs.extend(list(elem.tail))
                 lbls.extend(["O"] * len(elem.tail))
                 # print(chrs, lbls)
-        assert len(chrs) == len(lbls), len(chrs) - len(lbls)
+        assert len(chrs) == len(lbls), article.attrib
 
         sent_x = []  # for debug
         sent_y = []
@@ -103,6 +104,12 @@ if __name__ == "__main__":
         print(
             "Input texts do not match. Make sure you validate the XML.", file=sys.stderr
         )
+        for i, (t, p) in enumerate(zip(x_true, x_pred)):
+            if t != p:
+                print("line", i)
+                print("--", "".join(t))
+                print("++", "".join(p))
+        exit(1)
 
     print(classification_report(y_true, y_pred))
 
