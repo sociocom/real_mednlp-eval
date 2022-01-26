@@ -100,9 +100,11 @@ if __name__ == "__main__":
     root = ET.parse(args.xml)
     x_pred, y_pred = convert_xml_to_iob(root, tagset=args.tagset, attrib=args.attrib)
 
-    if x_true != x_pred:
+    if [len(x_) for x_ in x_true] != [len(x_) for x_ in x_pred]:
+        # ignore 全角・半角 mismatch in Japanese
         print(
-            "Input texts do not match. Make sure you validate the XML.", file=sys.stderr
+            "Input text lengths do not match. Make sure you validate the XML.",
+            file=sys.stderr,
         )
         for i, (t, p) in enumerate(zip(x_true, x_pred)):
             if t != p:
