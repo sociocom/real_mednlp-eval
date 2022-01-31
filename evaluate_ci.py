@@ -1,4 +1,4 @@
-"""Evaluate ADE."""
+"""Evaluate CI."""
 import argparse
 from pathlib import Path
 
@@ -19,9 +19,18 @@ def get_nmi_score(answer_path:Path, pred_path: Path) -> float:
     return nmi_score
 
 def validate_format(df:pd.DataFrame) -> None:
+    assert list(df.columns) == ["id", "case"], f'File has invalid columns: {df.columns}'
+
     HEAD_CASE_ID = 72
     TAIL_CASE_ID = 134
-    assert list(df.columns) == ["id", "case"], f'File has invalid columns: {df.columns}'
+    correct_case_ids = list(np.arange(HEAD_CASE_ID, TAIL_CASE_ID + 1))
+    pred_case_ids = list(df["id"].values)
+
+    missing_case_ids = sorted(set(correct_case_ids) - set(pred_case_ids))
+    extra_case_ids = sorted(set(pred_case_ids) - set(correct_case_ids))
+    assert missing_case_ids == [], f'File has missing case ids: {missing_case_ids}'
+    assert extra_case_ids == [], f'File has extra case ids: {extra_case_ids}'
+
     assert len(df) == (TAIL_CASE_ID - HEAD_CASE_ID + 1), f'File does not have {TAIL_CASE_ID - HEAD_CASE_ID + 1} rows: {len(df)}'
     assert list(df["id"].values) == list(np.arange(HEAD_CASE_ID, TAIL_CASE_ID + 1)), f'Invalid "id" column'
     assert np.isnan(df["case"].values).sum() == 0, f'Nan remains in "case" column'
