@@ -1,6 +1,6 @@
-# Real-MedNLP CR Eval
+# Real-MedNLP CR & RR Eval
 
-The evaluation toolkit for Real-MedNLP (NTCIR-16)'s CR track.
+The evaluation toolkit for Real-MedNLP (NTCIR-16)'s CR & RR tracks.
 
 ## Requirement
 
@@ -8,11 +8,12 @@ You need the following external packages to run this toolkit.
 
 - `lxml`
 - `seqeval`
+- `scikit-learn`
 
 Please install these packages to your Python environment, e.g.:
 
 ```
-pip install --user lxml seqeval
+pip install --user lxml seqeval scikit-learn
 ```
 
 The commands would be different depending on your Python setup.
@@ -70,3 +71,17 @@ python evaluate_ade.py --ref <test_answer.csv> path/to/your_submission.csv
 The script outputs Precision, Recall, F-score, and Support for each ADEval (0--3) as well as micro/macro averaged scores thereof.
 
 - `--ref`: path to the test answer CSV (`MedTxt-CR-JA_or_EN-ADE-test_answer-v2.csv`)
+
+
+
+#### Subtask 3: CI
+
+Use `evaluate_ci.py`:
+
+```
+python evaluate_ci.py --ref <test_answer.csv> path/to/your_submission.csv
+```
+
+The script outputs Normalized Mutual Information score.
+
+- `--ref`: path to the test answer CSV (`MedTxt-CR-JA_or_EN-CI-test_answer.csv`)
