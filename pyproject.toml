@@ -2,7 +2,7 @@
 name = "real_mednlp-cr-eval"
 version = "0.1.0"
 description = "To evaluate Real-MedNLP CR track submissions"
-authors = ["Shuntaro Yada <contact@shuntaroy.com>"]
+authors = ["Shuntaro Yada <contact@shuntaroy.com>", "Yuta Nakamura <yutanakamura.tky@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
