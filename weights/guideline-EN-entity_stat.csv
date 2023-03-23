@@ -1,0 +1,272 @@
+tag,mod,text,freq
+timex3,date,Previously,1
+timex3,date,December that year,1
+timex3,date,last time,6
+timex3,date,tomorrow,1
+timex3,date,2027/7,1
+timex3,date,today,1
+timex3,date,yesterday,1
+timex3,date,"March 6-7, 2026",1
+timex3,date,end of March,1
+timex3,date,end of this week (August 27),1
+timex3,date,September 27,1
+timex3,date,Around two years earlier,1
+timex3,date,since then,1
+timex3,date,"May 30, 2013",1
+timex3,date,"August 3, 2010",1
+timex3,date,"August 16, 2010",1
+timex3,date,"December 27, 2010",1
+timex3,date,"May 7, 2012",1
+timex3,date,"August 29, 2011",1
+timex3,date,5 years ago,1
+d,positive,"frosted glass-like and net-like, traction bronchiectasis, honeycomb lung",1
+d,positive,the percentage rise,1
+d,positive,interstitial pneumonia,1
+d,positive,right lung S2 nodule,1
+d,positive,Ground-glass opacity,1
+d,positive,infectious complication,1
+d,positive,Post-fracture deformation,1
+d,positive,Calcification,1
+d,positive,Primary lung cancer,1
+d,positive,diarrhea and a loss of appetite,1
+d,positive,Small lymph nodes,2
+d,positive,rise in concentration,3
+d,positive,post-fracture deformation,1
+d,positive,Nodules,1
+d,positive,solid part,1
+d,positive,nodular shadow,1
+d,positive,Lymph nodes,1
+d,positive,even shadow,1
+d,positive,bronchiectatic opacity,1
+d,positive,Adenopathy,1
+d,positive,bilateral pleural effusion,1
+d,positive,opacity,1
+d,positive,lymph nodes,3
+d,positive,Reticulation,1
+d,positive,Contractile changes,1
+d,positive,Difficulty opening,1
+d,positive,fever,1
+d,positive,shortness of breath,1
+d,positive,phlegm,1
+d,positive,anorexia,1
+d,positive,NHL,1
+d,positive,Reticular shadow,1
+d,positive,lymphatic node,1
+d,positive,ground grass opacity,1
+d,positive,Post-operative changes,1
+d,positive,left-lung pleural effusion,1
+d,positive,"IP (IPF, NSIP, others)",1
+d,positive,reticular shadow and traction bronchiectasis,2
+d,positive, patchy ground-glass opacity,1
+d,positive,interstitial pneumonia changes,2
+d,positive,calcification,2
+d,positive,Small LDAs,1
+d,positive,Cysts in both kidneys,1
+d,positive,patchy ground-glass opacity,1
+d,positive,strengthened density,1
+d,positive,LDAs,1
+d,positive,Interstitial pneumonia (UIP-like),1
+d,positive,exertional dyspnea,1
+d,positive,pneumonectasia,1
+d,positive,UIP pattern,1
+d,positive, eyelid dermatitis,1
+d,positive,cutaneous pruritus,1
+d,positive,hyperlipidemia,1
+d,positive,Acute hepatitis,1
+a,,right lower lobe of the lung,1
+a,,right lung,4
+a,,left first rib,1
+a,,upper lobes of the bilateral lungs,1
+a,,apex of the left lung,1
+a,,mediastinum and pulmonary hilum,2
+a,,bilateral lower lobes of the lungs,1
+a,,left third rib,1
+a,,below the pleurae covering the bilateral lower lobes of the lungs,1
+a,,along the internal cavity margin,1
+a,,SVC,1
+a,,mediastinum,2
+a,,both lungs,1
+a,,lungs,1
+a,,left paratracheal mediastinum,1
+a,,the bilateral superior lobes of the lungs,1
+a,,left lung apex,1
+a,,right inferior lobe,1
+a,,the lower part of the tracheal bifurcation and in the right and left lower paratracheal areas,1
+a,,right eyelid,1
+a,,directly under the pleura,1
+a,,#4L mediastinum,1
+a,,rectum,1
+a,,base of the lung,2
+a,,straight under both sides of the pleura,1
+a,,right,2
+a,,Aorta,2
+a,,both thyroid glands,2
+a,,right side,1
+a,,Right under the pleura,1
+a,,in the mediastinum,1
+a,,thorax,1
+a,,superior lobe predominant,1
+a,,inferior lobe predominant,1
+c,,slight decrease,1
+c,,tendency to develop exacerbation,1
+c,,tendency for exacerbation,1
+c,,vanished,1
+c,,becoming stronger,1
+c,,moderate augmentation,1
+c,,dissipated,1
+c,,Slight aggravation,2
+c,,Slight augmentation,1
+c,,No remarkable changes,2
+c,,little chronological change,1
+c,,no decrease is visible,1
+c,,almost the same,1
+c,,Reduction,1
+c,,aggravation,2
+c,,appeared,1
+f,,Uniform,1
+f,,scattered,5
+f,,atypical,1
+f,,pathologically significant,1
+f,,uneven,1
+f,,predominantly,1
+f,,"Well-defined, smooth-margin",1
+f,,Uneven,1
+f,,Localized,1
+f,,Diffuse,1
+f,,less than 3 cm in diameter,1
+f,,1.6 × 1.6 cm in the mediastinal window,1
+f,,significant size,1
+f,,Positive size,1
+f,,small amount,1
+f,,Mild,1
+f,,It is not large enough to be considered pathologically significant,1
+f,,prevelent,1
+f,,breadth of up to 4 cm,1
+f,,a short diameter of 1.9 cm,1
+f,,prevalently,1
+f,,Scattered,2
+f,,significant,1
+f,,prevalent,1
+f,,Slightly,1
+f,,Small,2
+f,,significantly large,1
+f,,Gradual,1
+d,suspicious,acute pneumonia,2
+d,suspicious,NSIP infection complications,1
+d,suspicious,postinflammatory nodules,1
+d,suspicious,sarcoid nodules,1
+d,suspicious,IPF/UIP,1
+d,suspicious,Chronic hypersensitivity pneumonitis,1
+d,suspicious,benign nodules,1
+d,suspicious,interstitial pneumonia,3
+d,suspicious,"combination of infectious diseases caused by bacteria, viruses, and pneumocystes",1
+d,suspicious,NSIP pattern,1
+d,negative,Small lymphadenopathy,1
+d,negative,pneumothorax bullae,2
+d,negative,pharyngeal cancer,1
+d,negative,lymphadenopathy,1
+d,negative,findings of invasion,1
+d,negative,Adenopathy,1
+d,negative,LN,1
+d,negative,cough,1
+d,negative,DOE,1
+d,negative,bone metastasis,1
+d,negative,honeycomb lung,1
+d,negative,adenopathy,1
+d,negative,pleural effusions,2
+d,negative,lymph nodes,1
+r,executed,operation,1
+r,executed,defibrillation,1
+r,executed,pirespa,2
+d,general,IP,2
+d,general,infection,1
+d,general,interstitial pneumonia,1
+d,general,Idiopathic interstitial pneumonia,1
+d,general,hypersensitivity pneumonia,1
+d,general,secondary interstitial pneumonia,1
+d,general,collagenosis,1
+d,, cT1c,1
+d,,N0,1
+m-key,negated,ofev,1
+m-key,negated,perispa,1
+m-key,negated,cough medicine,1
+timex3,time,morning,1
+timex3,time,Currently,1
+t-key,,Smoking,1
+t-key,,SpO2,2
+t-key,,FEV1,1
+t-key,,KL-6,1
+t-key,,cons,1
+t-key,,Started smoking,1
+t-key,,Stopped at,1
+t-key,,MRC,2
+t-key,, Average SpO2,1
+t-key,,SpO2 frequency distribution (& < 90%),1
+t-key,,Hugh-Jones,1
+t-key,,VC,1
+t-key,,FEV1.0,1
+t-key,,FRC,1
+t-key,,DLCO,1
+t-key,,Smoker,1
+t-val,,20 cigarettes a day,1
+t-val,,stop smoking,1
+t-val,,94-95%,1
+t-val,,1. 97L(80. 0%),1
+t-val,,559,1
+t-val,,alert,1
+t-val,,grade 3,2
+t-val,,90% (RA),1
+t-val,,89%,1
+t-val,,62.11%,1
+t-val,,II,1
+t-val,,2.27 (120.3%),1
+t-val,,1.58 (120.2%),1
+t-val,,2.35 (159.8%),1
+t-val,,3.53 (30.2%),1
+t-val,,20 cigarettes,1
+t-val,,quit,1
+timex3,duration,40 years,1
+timex3,age,59 years old,1
+timex3,age,20 yo,1
+timex3,age,75 yo,1
+timex3,age,32 years old,1
+timex3,set,Frequent,1
+timex3,set,three times a day,1
+timex3,set,once every morning,1
+timex3,med,Post-operative,2
+timex3,med,post-sedation,1
+timex3,med,during chemotherapy,1
+timex3,med,before bed,1
+m-key,executed,Nasal,1
+m-key,executed,predonine,1
+m-key,executed,Enteral nutrition,1
+m-key,executed,steroid,1
+m-val,,1L/min,1
+m-val,,6L/min,1
+m-val,,100mL/1hr,1
+m-val,,"1,200mg",1
+m-val,,2. 5mg,1
+p,,decline in oxidation capability,1
+p,,spare,2
+p,,LNs,1
+p,,Coronary,1
+p,,Possible UIP pattern,1
+t-test,executed,Chest CT,1
+t-test,executed,CAG,1
+t-test,executed,Home pulse oxymeter,1
+t-test,executed,stable breathing function,1
+t-test,executed,CT,1
+t-test,executed,medical history,1
+t-key,scheduled,6-minute walk,1
+m-key,scheduled,pulmocare,1
+m-val,executed,10mg,1
+m-val,scheduled,7. 5mg,1
+r,negated,PCI,1
+cc,executed,admitted,1
+cc,executed,outpatient,1
+cc,executed,consulted,1
+cc,executed,referral visit,1
+cc,scheduled,discharged,1
+cc,scheduled,hospitalization,1
+t-test,scheduled,CT,1
+r,scheduled,HOT,1

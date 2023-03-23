@@ -1,24 +1,10 @@
 # Real-MedNLP CR & RR Eval
 
-The evaluation toolkit for Real-MedNLP (NTCIR-16)'s CR & RR tracks.
+The evaluation toolkit for one of the NTCIR-16's evaluation tasks, [Real-MedNLP CR & RR tracks](https://sociocom.naist.jp/real-mednlp/).
 
-## Requirement
+## Setup
 
-You need the following external packages to run this toolkit.
-
-- `lxml`
-- `seqeval`
-- `scikit-learn`
-
-Please install these packages to your Python environment, e.g.:
-
-```
-pip install --user lxml seqeval scikit-learn
-```
-
-The commands would be different depending on your Python setup.
-
-Also, you can create a virtual environment with `poetry` by using the given `pyproject.toml`.
+Please install dependencies listed in `pyproject.toml` by using Python package managers (e.g. `poetry install`).
 
 ## Usage
 
@@ -59,6 +45,19 @@ The script outputs Precision, Recall, F-score, and Support for each tag as well 
   - `cr`: target "d", "a", "timex3", "t-test", "t-key", "t-val", "m-key", and "m-val"
   - `rr`: evaluate "d", "a", "timex3", and "t-test"
 - `--attrib` (`--no-attrib`): consider (or ignore) the attributes defined in some tags ("certainty", "state", "type")
+
+To calculate the finer metrics, use `finer_ner_eval.py`:
+
+```
+python finer_ner_eval.py </dir/path/to/IOB> --resume False
+```
+
+- The finer metrics include:
+  - Partial match scores of Precision, Recall, and F1-score
+  - Training frequency-based weighting to Precision, Recall, and F1-score
+- The script reads IOB files from the given directory and write the scores CSV file (all metrics of one system per line) to the current directory
+  - IOB files can be converted from the submission XML format by using `evaluate_ner.py`'s `convert_xml_to_iob()` function
+- `--resume`: some systems may generate errorneous IOB files. If you want to resume the evaluation from the last successful file, set this option to `True`.
 
 #### Subtask 3: ADE
 
